@@ -32,7 +32,7 @@ class Home extends Component {
 
     loadImages() {
 
-        let url = 'http://localhost:3001/image';
+        let url = 'https://backend-web2.herokuapp.com:3001/image';
         api.get(url).then((res) => {
             console.log(res)
             if (res.data.status === 'not authorized')
@@ -47,11 +47,11 @@ class Home extends Component {
     }
 
     logout() {
-        api.get('http://localhost:3001/auth/logout').then(Auth.signout(() => this.props.history.push('/login')));
+        api.get('https://backend-web2.herokuapp.com:3001/auth/logout').then(Auth.signout(() => this.props.history.push('/login')));
     }
 
     searchImage() {
-        let url = 'http://localhost:3001/image/query?q='+this.refs.searchInput.value;
+        let url = 'https://backend-web2.herokuapp.com:3001/image/query?q='+this.refs.searchInput.value;
         api.get(url).then((res) => {
             console.log(res)
             if (res.data.status === 'not authorized')
@@ -96,7 +96,7 @@ class Home extends Component {
                             this.state.images.map((image) => (
                                 <div className="d-flex flex-row justify-content-center">
                                     <div className="">
-                                        <img height="250px" src={"http://localhost:3001/"+image.filename} width="250px" alt="img" />
+                                        <img height="250px" src={"https://backend-web2.herokuapp.com:3001/"+image.filename} width="250px" alt="img" />
                                         <br />
                                     </div>
                                 </div>

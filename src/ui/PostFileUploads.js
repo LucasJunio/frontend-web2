@@ -31,7 +31,7 @@ class PostFileUploads extends Component {
             alert('Select a valid image ' + ext)
         } else
         if (this.state.selectedFile) {
-            await axios.post('http://localhost:3001/image', data, {
+            await axios.post('https://backend-web2.herokuapp.com:3001/image', data, {
                 withCredentials: true,
                 headers: {
                     'Content-Type': 'multipart/form-data'
@@ -59,7 +59,7 @@ class PostFileUploads extends Component {
     };
 
     logout() {
-        axios.get('http://localhost:3001/auth/logout', { withCredentials: true }).then(
+        axios.get('https://backend-web2.herokuapp.com:3001/auth/logout', { withCredentials: true }).then(
             Auth.signout(() => this.props.history.push('/login'))
         );
         this.props.history.push('/login')

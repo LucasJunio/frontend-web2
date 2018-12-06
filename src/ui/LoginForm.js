@@ -52,7 +52,7 @@ class LoginForm extends Component {
             email: this.refs.email.value,
             password: this.refs.password.value
         };
-        let url = 'http://localhost:3001/users/register';
+        let url = 'https://backend-web2.herokuapp.com:3001/users/register';
         api.post(url, dataToSend)
             .then(res => {
                 console.log(res);
@@ -77,7 +77,7 @@ class LoginForm extends Component {
             password: this.state.password
         }
         console.log(JSON.stringify(dataToSend))
-        let url = 'http://localhost:3001/auth/login';
+        let url = 'https://backend-web2.herokuapp.com:3001/auth/login';
         api.post(url, dataToSend)
             .then(res => {
                 console.log(res);
