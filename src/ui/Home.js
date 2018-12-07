@@ -96,7 +96,7 @@ class Home extends Component {
                             this.state.images.map((image) => (
                                 <div className="d-flex flex-row justify-content-center">
                                     <div className="">
-                                        <img height="250px" src={"https://backend-web2.herokuapp.com/"+image.filename} width="250px" alt="img" />
+                                        <img height="250px" src={image.filename} width="250px" alt="img" />
                                         <br />
                                     </div>
                                 </div>
