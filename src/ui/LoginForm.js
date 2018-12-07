@@ -52,7 +52,7 @@ class LoginForm extends Component {
             email: this.refs.email.value,
             password: this.refs.password.value
         };
-        let url = 'https://backend-web2.herokuapp.com/users/register';
+        let url = 'https://backend-web2.herokuapp.com/users';
         api.post(url, dataToSend)
             .then(res => {
                 console.log(res);

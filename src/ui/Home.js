@@ -51,7 +51,7 @@ class Home extends Component {
     }
 
     searchImage() {
-        let url = 'https://backend-web2.herokuapp.com/image/query?q='+this.refs.searchInput.value;
+        let url = 'https://backend-web2.herokuapp.com/image?q='+this.refs.searchInput.value;
         api.get(url).then((res) => {
             console.log(res)
             if (res.data.status === 'not authorized')
